@@ -48,8 +48,8 @@ Function CustomFunction
 		  	trigger.kill();
 		});
 		
-		ClapatSlider.instances.forEach(slider => slider.off());
-		ClapatSlider.instances = [];
+		flSlider.instances.forEach(slider => slider.off());
+		flSlider.instances = [];
 	}
 	
 	
@@ -87,92 +87,11 @@ Function Height Titles
 			});
 		}
 		
-		generateSpans('.height-title .hero-title');
+		
 		generateSpans('.height-title .next-hero-title');
 		generateSpans('.height-title .slide-hero-title');
 		generateSpans('.fixed-title');
-		
-
-		function applyHoverEffect(selector) {
-			const spans = document.querySelectorAll(selector);
-			
-			spans.forEach((span) => {
-				span.originalScaleY = 1;
-				span.addEventListener('mousemove', handleMouseMove);
-			});
-		
-			function handleMouseMove(e) {
-				const hoveredSpan = e.target;
-				const rect = hoveredSpan.getBoundingClientRect();
-				const mouseX = e.clientX - rect.left;
-				const scaleFactor = 0.2;
-				
-				const center = rect.width / 2;
-				let scale;
-			
-				if (mouseX < center) {
-				  scale = (scaleFactor + 1) + (scaleFactor * mouseX) / center;
-				} else {
-				  scale = (scaleFactor + 1) + (scaleFactor * (rect.width - mouseX)) / center;
-				}
-			
-				gsap.to(hoveredSpan, {
-				  scaleY: scale,
-				  duration: 0.5,
-				  ease: 'power4.out',
-				});
-			
-				const spansArray = Array.from(spans);
-				const hoveredIndex = spansArray.indexOf(hoveredSpan);
-			
-				const prevSpan = spansArray[hoveredIndex - 1];
-				const nextSpan = spansArray[hoveredIndex + 1];
-			
-				if (prevSpan) {
-					let distanceFromMouse = Math.abs(rect.left - e.clientX);
-					distanceFromMouse = Math.min(distanceFromMouse, center);
-					
-					const scalePrev = 1 + (scaleFactor * (center - distanceFromMouse)) / center;
-					gsap.to(prevSpan, {
-						scaleY: scalePrev,
-						duration: 0.5,
-						ease: 'power4.out',
-					});
-				}
-			
-				if (nextSpan) {
-					let distanceFromMouse = Math.abs(rect.right - e.clientX);
-					distanceFromMouse = Math.min(distanceFromMouse, center);
-					
-					const scaleNext = 1 + (scaleFactor * (center - distanceFromMouse)) / center;
-					gsap.to(nextSpan, {
-						scaleY: scaleNext,
-						duration: 0.5,
-						ease: 'power4.out',
-					});
-				}
-			}
-			
-			spans.forEach((span) => {
-				span.addEventListener('mouseleave', handleMouseLeave);
-			});
-		
-			function handleMouseLeave() {
-				spans.forEach((span) => {
-					gsap.to(span, {
-						scaleY: span.originalScaleY,
-						duration: 0.5,
-						ease: 'power4.out',
-					});
-				});
-			}
-		}
-		
-		applyHoverEffect('.height-title .hero-title span');
-		applyHoverEffect('.height-title .next-hero-title span');
-				
-		
-	}// End Height Titles	
+	}	
 				
 
 /*--------------------------------------------------
@@ -341,13 +260,13 @@ Function Page Load
 					
 					
 					
-					gsap.set($(".showcase-gallery .clapat-slider .slide-inner"), { opacity: 0 });
-					gsap.to($(".showcase-gallery .clapat-slider .clapat-slide .slide-inner"), { duration: 2, opacity: 1, delay: 0.3, ease: Power4.easeOut });
+					gsap.set($(".showcase-gallery .fl-slider .slide-inner"), { opacity: 0 });
+					gsap.to($(".showcase-gallery .fl-slider .fl-slide .slide-inner"), { duration: 2, opacity: 1, delay: 0.3, ease: Power4.easeOut });
 					
-					var gallerySlideClasses = [".clapat-slide-prev-two", ".clapat-slide-prev", ".clapat-slide-active", ".clapat-slide-next", ".clapat-slide-next-two"];
+					var gallerySlideClasses = [".fl-slide-prev-two", ".fl-slide-prev", ".fl-slide-active", ".fl-slide-next", ".fl-slide-next-two"];
 					
 					gallerySlideClasses.forEach(function(gallerySlideClass, index) {
-						var gallerySlide = $(".showcase-gallery .clapat-slider " + gallerySlideClass + " .slide-inner");
+						var gallerySlide = $(".showcase-gallery .fl-slider " + gallerySlideClass + " .slide-inner");
 						var delay = 0 + index * 0.1;						
 						gsap.set(gallerySlide, { xPercent: 250 });
 						gsap.to(gallerySlide, { duration: 1.5, xPercent: 0, delay: delay, ease: Power4.easeOut });
@@ -355,8 +274,8 @@ Function Page Load
 					
 					
 					// Fading In Showcase Footer Elements
-					gsap.set($("#filters-wrapper, .clapat-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {opacity:0});
-					gsap.to($("#filters-wrapper, .clapat-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {duration: 0.4, opacity:1, delay:0.8, ease:Power3.easeOut});
+					gsap.set($("#filters-wrapper, .fl-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {opacity:0});
+					gsap.to($("#filters-wrapper, .fl-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {duration: 0.4, opacity:1, delay:0.8, ease:Power3.easeOut});
 					
 					
 					$('body').addClass("header-visible");
@@ -1095,12 +1014,12 @@ Function Showcase Portfolio
 			
 			
 			function filter() {
-				var state = Flip.getState('.clapat-item');
-				var projects = document.querySelectorAll('.clapat-item');
+				var state = Flip.getState('.fl-item');
+				var projects = document.querySelectorAll('.fl-item');
 				var startHeight = gsap.getProperty(".showcase-portfolio", "height");
 				
 				var filters = document.querySelectorAll('.filter-option.is_active');
-				var parallaxItems = document.querySelectorAll('.showcase-portfolio .clapat-item.vertical-parallax .slide-inner');
+				var parallaxItems = document.querySelectorAll('.showcase-portfolio .fl-item.vertical-parallax .slide-inner');
 			
 			  	var hasFilteredItems = false; 
 			
@@ -1204,7 +1123,7 @@ Function Showcase Portfolio
 			
 			if (!isMobile()) {	
 							
-				$(".showcase-portfolio .clapat-item .slide-inner").on('mouseenter', function() {
+				$(".showcase-portfolio .fl-item .slide-inner").on('mouseenter', function() {
 					$('#ball p').remove();
 					var $this = $(this);			
 					gsap.to('#ball', {duration: 0.3, borderWidth: '2px', scale: 1.4, borderColor:"rgba(255,255,255,0)", backgroundColor:"rgba(255,255,255,0.1)"});
@@ -1224,7 +1143,7 @@ Function Showcase Portfolio
 					});
 				});
 				
-				$(".showcase-portfolio .clapat-item .slide-inner").on('mouseenter', function() {
+				$(".showcase-portfolio .fl-item .slide-inner").on('mouseenter', function() {
 					if (!$('.showcase-portfolio').hasClass('list-grid')) {
 						gsap.set($(this).find('.slide-title span'), {y:30, opacity:0, });
 						gsap.set($(this).find('.slide-cat span'), {y:30, opacity:0, });
@@ -1282,11 +1201,11 @@ Function Showcase Gallery
 			$("footer").addClass("showcase-footer");
 			
 			gsap.set($(".showcase-gallery .slide-hero-title span, .showcase-gallery .slide-hero-subtitle span"), { y: 120, opacity: 0 });
-			gsap.set($(".showcase-gallery .clapat-slider .slide-inner"), { opacity: 0 });
+			gsap.set($(".showcase-gallery .fl-slider .slide-inner"), { opacity: 0 });
 			
 			
 			
-			slider = new ClapatSlider('.showcase-gallery', { 
+			slider = new flSlider('.showcase-gallery', { 
 				direction: 'horizontal', 
 				snap: false,
 				navigation: {
@@ -1326,18 +1245,18 @@ Function Showcase Gallery
 									gsap.to($(".showcase-gallery .slider-fixed-content .caption-timeline span"), { duration: 0.7, y: 0, opacity: 1, stagger: 0.1, delay: 0.6, ease: Power3.easeOut });					
 								}
 								
-								gsap.to($(".showcase-gallery .clapat-slider .clapat-slide .slide-inner"), { duration: 0.7, opacity: 1, delay: 0.4, ease: Power2.easeOut });
+								gsap.to($(".showcase-gallery .fl-slider .fl-slide .slide-inner"), { duration: 0.7, opacity: 1, delay: 0.4, ease: Power2.easeOut });
 								
-								var gallerySlideClasses = [".clapat-slide-prev-two", ".clapat-slide-prev", ".clapat-slide-active", ".clapat-slide-next", ".clapat-slide-next-two"];
+								var gallerySlideClasses = [".fl-slide-prev-two", ".fl-slide-prev", ".fl-slide-active", ".fl-slide-next", ".fl-slide-next-two"];
 								
 								gallerySlideClasses.forEach(function(gallerySlideClass, index) {
-									var gallerySlide = $(".showcase-gallery .clapat-slider " + gallerySlideClass + " .slide-inner");
+									var gallerySlide = $(".showcase-gallery .fl-slider " + gallerySlideClass + " .slide-inner");
 									var delay = 0 + index * 0.1;						
 									gsap.set(gallerySlide, { xPercent: 150 });
 									gsap.to(gallerySlide, { duration: 1.5, xPercent: 0, delay: delay, ease: Power4.easeOut });
 								});
 								
-								gsap.to($("#filters-wrapper, .clapat-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {duration: 0.5, opacity:1, delay:0.4, ease:Power2.easeOut});
+								gsap.to($("#filters-wrapper, .fl-pagination, .cp-button-prev, .cp-button-next, .progress-info, footer .link-text"), {duration: 0.5, opacity:1, delay:0.4, ease:Power2.easeOut});
 							
 							});
 						
@@ -1345,7 +1264,7 @@ Function Showcase Gallery
 						
 					},
 					slideLeaveViewport : function( slide ) {						
-						gsap.set($('.clapat-slider div:not(.clapat-slide-visible) .slide-events'), { x: "" });						
+						gsap.set($('.fl-slider div:not(.fl-slide-visible) .slide-events'), { x: "" });						
 					},
 
 				},
@@ -1406,7 +1325,7 @@ Function Showcase Gallery
 				
 				slider.enabled = false;
 				
-				gsap.to($("footer .link-text, .clapat-pagination, .progress-info, #filters-wrapper"), {duration: 0.3, opacity:0, y:30, stagger:-0.05, ease:Power2.easeInOut});
+				gsap.to($("footer .link-text, .fl-pagination, .progress-info, #filters-wrapper"), {duration: 0.3, opacity:0, y:30, stagger:-0.05, ease:Power2.easeInOut});
 								
 				if ($(".showcase-gallery .slider-fixed-content #slide-inner-caption").hasClass("height-title")) {
 					
@@ -1447,7 +1366,7 @@ Function Showcase Gallery
 				const flipstate = Flip.getState([allImages]);				
 				const flipstate1 = Flip.getState([currentImage]);
 								
-				gsap.set(currentImage.closest(".clapat-slide"), {zIndex: 0});
+				gsap.set(currentImage.closest(".fl-slide"), {zIndex: 0});
 				
 				// put them inside the .grid element
 				grid.append(...allImages);
@@ -1456,7 +1375,7 @@ Function Showcase Gallery
 				triggeredImage.append(currentImage);
 				triggeredImage.append(currentImageCaption);
 				
-				gsap.to(".clapat-slider .clapat-slide .trigger-item", { duration: 1, opacity:0, scale:0.7, ease:Power2.easeOut });
+				gsap.to(".fl-slider .fl-slide .trigger-item", { duration: 1, opacity:0, scale:0.7, ease:Power2.easeOut });
 				
 				// Flip it
 				Flip.from(flipstate, {
@@ -1500,7 +1419,7 @@ Function Showcase Gallery
 			
 			const hideGrid = () => {
 				
-				gsap.to(".clapat-slider .clapat-slide .trigger-item", { duration: 0.5, opacity:1, scale:1, delay:0.2, ease: 'power3.inOut' });				
+				gsap.to(".fl-slider .fl-slide .trigger-item", { duration: 0.5, opacity:1, scale:1, delay:0.2, ease: 'power3.inOut' });				
 				gsap.to($(".showcase-gallery .gallery-zoom-wrapper .slide-caption"), {duration: 0.25, opacity:0, delay:0, ease:Power2.easeOut});
 				animateTitle.to(".showcase-gallery .gallery-zoom-wrapper .slide-caption span", { duration: 0.5, y: -100, opacity:0, ease:Power2.easeInOut});
 				gsap.to(".showcase-gallery a.slide-link", { duration: 0.3, opacity:0, scale:0.8, delay:0, ease:Power2.easeOut });
@@ -1551,13 +1470,13 @@ Function Showcase Gallery
 						
 						DOM.currentItem.DOM.imageWrap.appendChild(currentImageCaption);	
 						
-						const triggeredItem = document.querySelector('.clapat-slide.triggered-item');
+						const triggeredItem = document.querySelector('.fl-slide.triggered-item');
 						if( triggeredItem != null ){							
 							triggeredItem.classList.remove('triggered-item');
 						}
 						
-						const clapatSlides = document.querySelectorAll('.clapat-slide');
-						clapatSlides.forEach(slide => {
+						const flSlides = document.querySelectorAll('.fl-slide');
+						flSlides.forEach(slide => {
 						  	slide.style.zIndex = '';
 							slideInner = slide.querySelector('.slide-inner');
 							slideInner.classList.remove('disabled');
@@ -1608,7 +1527,7 @@ Function Showcase Gallery
 					gsap.to($(".showcase-gallery .slider-fixed-content .caption-timeline span"), { duration: 0.7, y: 0, opacity: 1, stagger: 0.05, delay: 0.2, ease: Power3.easeOut });
 				}
 				
-				gsap.to($("footer .link-text, .clapat-pagination, .progress-info, #filters-wrapper"), {duration: 0.3, opacity:1, y:0, stagger:0.05, delay:0.4, ease:Power2.easeInOut});
+				gsap.to($("footer .link-text, .fl-pagination, .progress-info, #filters-wrapper"), {duration: 0.3, opacity:1, y:0, stagger:0.05, delay:0.4, ease:Power2.easeInOut});
 				gsap.to('#ball', {duration: 0.2, borderWidth: '4px', scale:0.5, borderColor:'#999999', backgroundColor:'transparent'});
 				gsap.to('#ball-loader', {duration: 0.2, borderWidth: '4px', top: 0, left: 0});
 				$("#ball").removeClass("with-blur");
@@ -1622,13 +1541,13 @@ Function Showcase Gallery
 			
 				// Item instances (slides)
 				const items = [];
-				[...document.querySelectorAll('.clapat-slide')].forEach(item => {
+				[...document.querySelectorAll('.fl-slide')].forEach(item => {
 					items.push(new Item(item));
 				});
 						
 				// Cloned items
 				const itemsCloned = [];
-				[...document.querySelectorAll('.clapat-slide-clone')].forEach(item => {
+				[...document.querySelectorAll('.fl-slide-clone')].forEach(item => {
 					itemsCloned.push(new Item(item));
 				});
 			
@@ -1754,7 +1673,7 @@ Function Showcase Gallery
 				return {					
 					items: items,					
 					grid: gridItems,					
-					currentItem: new Item( document.querySelector('.clapat-slide.triggered-item') ),
+					currentItem: new Item( document.querySelector('.fl-slide.triggered-item') ),
 					currentIndex: currentIndex
 				};
 				
@@ -1771,7 +1690,7 @@ Function Showcase Gallery
 						
 						if( $('.showcase-gallery').length > 0 ){
 							
-							event.currentTarget.closest('.clapat-slide').classList.add('triggered-item');
+							event.currentTarget.closest('.fl-slide').classList.add('triggered-item');
 							showGrid();
 						}
 					});
@@ -1892,7 +1811,7 @@ Function Showcase Gallery
 						liveTriggeredImage.appendChild( nextImage );
 						
 						// Get all the slides
-						let slides = document.querySelectorAll('.clapat-slide');
+						let slides = document.querySelectorAll('.fl-slide');
 						
 						// Remove the caption in the image preview in order to replace it with the next
 						let currentSlide = slides[currentIndex];
@@ -1907,7 +1826,7 @@ Function Showcase Gallery
 						}
 						
 						// Update the triggered item flag in slider as it marks the current image
-						$('.clapat-slide').removeClass('triggered-item');
+						$('.fl-slide').removeClass('triggered-item');
 						let indexSlide = Number( nextImage.getAttribute('data-slide-index') );
 						let nextSlide = slides[indexSlide];
 						if( nextSlide ){
@@ -2001,7 +1920,7 @@ Function Showcase Gallery
 					});
 				
 					function callTiltSlider(e) {
-						moveItSlider(e, '.clapat-slider-viewport', 30);
+						moveItSlider(e, '.fl-slider-viewport', 30);
 					}
 				
 					function moveItSlider(e, target, movement) {
@@ -2017,39 +1936,7 @@ Function Showcase Gallery
 				}
 
 				
-				
-				var dragWrapper = $('.clapat-slider');
-				dragWrapper.on('mousedown', function (evt) {
-					dragWrapper.on('mouseup mousemove', function handler(evt) {
-						if (evt.type === 'mouseup') {					  
-							// click
-							gsap.to('#ball', {duration: 0.2, borderWidth: '4px', scale:0.5, borderColor:'#999999', backgroundColor:'transparent'});
-							$("body").removeClass("scale-drag-x");
-							$("#ball").removeClass("with-icon");
-							$('#ball i').remove();
-							$("#ball").removeClass("with-blur");
-							$('#ball p').remove();
-							
-						} else {
-							// drag
-							if ($('#magic-cursor').hasClass("light-content")) {
-								gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#fff', backgroundColor:'transparent'});
-							} else {
-								gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#000', backgroundColor:'transparent'});
-							}
-							$("body" ).addClass("scale-drag-x");
-							$("#ball").removeClass("with-icon");
-							$('#ball i').remove();
-							$("#ball").removeClass("with-blur");
-							$('#ball p').remove();
-						  
-						}
-						dragWrapper.off('mouseup mousemove', handler);
-					});
-				});
-				
-					
-				$('.clapat-slider').on('mouseup touchend', function() {
+				$('.fl-slider').on('mouseup touchend', function() {
 					gsap.to('#ball', {duration: 1, borderWidth: '4px', scale:0.5, borderColor:'#999999', backgroundColor:'transparent', ease:Elastic.easeOut});
 					$("body").removeClass("scale-drag-x");
 				});
@@ -2060,7 +1947,7 @@ Function Showcase Gallery
 				});
 					
 				
-				$(".showcase-gallery.preview-mode-enabled .clapat-slide .slide-inner").on('mouseenter', function() {	
+				$(".showcase-gallery.preview-mode-enabled .fl-slide .slide-inner").on('mouseenter', function() {	
 					if (!$('body').hasClass('scale-drag-x')) {
 						$('#ball p').remove();
 						var $this = $(this);			

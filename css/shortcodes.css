@@ -152,41 +152,41 @@
 	Carousel
 ---------------------------------------------------*/
 	
-	.clapat-slider-wrapper.content-slider  {
+	.fl-slider-wrapper.content-slider  {
 		width:100%;
 		height: auto;
 		position:relative;	
 	}
 	
-	.content-slider .clapat-slider-viewport {
+	.content-slider .fl-slider-viewport {
 		display: flex;
 		position: relative;
 		margin: 0 auto;
 	}
 	
-	.content-slider.looped-carousel .clapat-slider-viewport {
+	.content-slider.looped-carousel .fl-slider-viewport {
 		max-width:1280px;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-slider-viewport {
+	.content-slider.small-looped-carousel .fl-slider-viewport {
 		max-width:600px;
 	}
 	
-	.content-slider .clapat-slider {
+	.content-slider .fl-slider {
 		padding: 0 0 0 0;
 		height: auto;
 		position:relative;	
 	}
 	
-	.content-slider .clapat-slide {
+	.content-slider .fl-slide {
 		width: 100%;
 	}
 	
-	.content-slider.looped-carousel .clapat-slide {
+	.content-slider.looped-carousel .fl-slide {
 		padding:0 60px;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-slide {
+	.content-slider.small-looped-carousel .fl-slide {
 		padding:0 20px;
 	}
 	
@@ -199,23 +199,23 @@
 		border-radius:8px;
 	}
 	
-	.content-slider.looped-carousel .clapat-button-prev, .content-slider.looped-carousel .clapat-button-next {
+	.content-slider.looped-carousel .fl-button-prev, .content-slider.looped-carousel .fl-button-next {
 		display:none;
 	}
 	
-	.disable-cursor .content-slider.looped-carousel .clapat-button-prev, .disable-cursor .content-slider.looped-carousel .clapat-button-next {
+	.disable-cursor .content-slider.looped-carousel .fl-button-prev, .disable-cursor .content-slider.looped-carousel .fl-button-next {
 		display:block;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-button-prev, .content-slider.small-looped-carousel .clapat-button-next {
+	.content-slider.small-looped-carousel .fl-button-prev, .content-slider.small-looped-carousel .fl-button-next {
 		display:none;
 	}
 	
-	.disable-cursor .content-slider.small-looped-carousel .clapat-button-prev, .disable-cursor .content-slider.small-looped-carousel .clapat-button-next {
+	.disable-cursor .content-slider.small-looped-carousel .fl-button-prev, .disable-cursor .content-slider.small-looped-carousel .fl-button-next {
 		display:block;
 	}
 	
-	.content-slider .clapat-pagination {
+	.content-slider .fl-pagination {
 		bottom:20px;
 	}
 	
@@ -241,11 +241,11 @@
 		cursor:pointer;		
 	}
 	
-	.content-slider .clapat-pagination {
+	.content-slider .fl-pagination {
 		opacity:1;
 	}
 	
-	.content-slider .clapat-pagination-bullet .parallax-wrap {
+	.content-slider .fl-pagination-bullet .parallax-wrap {
 		width: 40px;
 		height: 40px;
 		display: inline-flex;
@@ -255,14 +255,14 @@
 		pointer-events: initial;
 	}
 	
-	.content-slider .clapat-pagination-bullet .parallax-element {
+	.content-slider .fl-pagination-bullet .parallax-element {
 		height: 40px;
 		width: 40px;
 		text-align: center;
 		line-height: 50px;
 	}
 	
-	.clapat-pagination-bullet-active .path {
+	.fl-pagination-bullet-active .path {
 		display: inline-block !important;
 		stroke-dasharray: 1000;
 		stroke-dashoffset: 0;
@@ -270,43 +270,43 @@
 		animation-iteration-count: unset;
 	}
 	
-	.clapat-pagination-bullet .path, .light-content.light-content-slider .clapat-pagination-bullet .path {
+	.fl-pagination-bullet .path, .light-content.light-content-slider .fl-pagination-bullet .path {
 		stroke:#000;
 	}
 	
-	.clapat-pagination-bullet .solid-fill, .light-content.light-content-slider .clapat-pagination-bullet .solid-fill {
+	.fl-pagination-bullet .solid-fill, .light-content.light-content-slider .fl-pagination-bullet .solid-fill {
 		fill:#000;
 	}
 	
-	.light-content .clapat-pagination-bullet .path, .dark-section .clapat-pagination-bullet .path, .light-content-slider .clapat-pagination-bullet .path {
+	.light-content .fl-pagination-bullet .path, .dark-section .fl-pagination-bullet .path, .light-content-slider .fl-pagination-bullet .path {
 		stroke:#fff;
 	}
 	
-	.light-content .light-section .clapat-pagination-bullet .path {
+	.light-content .light-section .fl-pagination-bullet .path {
 		stroke:#000;
 	}
 	
-	 .light-content .clapat-pagination-bullet .solid-fill, .dark-section .clapat-pagination-bullet .solid-fill, .light-content-slider .clapat-pagination-bullet .solid-fill {
+	 .light-content .fl-pagination-bullet .solid-fill, .dark-section .fl-pagination-bullet .solid-fill, .light-content-slider .fl-pagination-bullet .solid-fill {
 		 fill:#fff;
 	 }
 	 
-	 .light-content .light-section .clapat-pagination-bullet .solid-fill, .light-content .dark-section .dark-cursor .clapat-pagination-bullet .solid-fill {
+	 .light-content .light-section .fl-pagination-bullet .solid-fill, .light-content .dark-section .dark-cursor .fl-pagination-bullet .solid-fill {
 		 fill:#000;
 	 }
 	 
-	.light-cursor .clapat-pagination-bullet .path {
+	.light-cursor .fl-pagination-bullet .path {
 		stroke:#fff!important;
 	}
 	
-	.dark-cursor .clapat-pagination-bullet .path {
+	.dark-cursor .fl-pagination-bullet .path {
 		stroke:#000!important;
 	}
 	
-	.light-cursor .clapat-pagination-bullet .solid-fill {
+	.light-cursor .fl-pagination-bullet .solid-fill {
 		fill:#fff!important;
 	}
 	
-	.dark-cursor .clapat-pagination-bullet .solid-fill {
+	.dark-cursor .fl-pagination-bullet .solid-fill {
 		fill:#000!important;
 	}
 	
@@ -324,7 +324,7 @@
 	  }
 	}
 	
-	.disable-cursor .full .looped-carousel .clapat-controls, .disable-cursor .full_elementor .looped-carousel .clapat-controls {
+	.disable-cursor .full .looped-carousel .fl-controls, .disable-cursor .full_elementor .looped-carousel .fl-controls {
 		position: absolute;
 		width: calc(100% - 60px);
 		height: 100%;
@@ -334,7 +334,7 @@
 		margin: 0 auto;
 	}
 	
-	.disable-cursor .full .small-looped-carousel .clapat-controls, .disable-cursor .full_elementor .small-looped-carousel .clapat-controls {
+	.disable-cursor .full .small-looped-carousel .fl-controls, .disable-cursor .full_elementor .small-looped-carousel .fl-controls {
 		position: absolute;
 		width: calc(100% - 60px);
 		max-width:540px;
@@ -490,7 +490,7 @@
 		opacity:0;		
 	}
 	
-	.item .hero-video-wrapper, .clapat-item .hero-video-wrapper, .hover-reveal__img .hero-video-wrapper, .clapat-slider .hero-video-wrapper, .open-thumbnail .hero-video-wrapper, .carousel-zoom-wrapper .hero-video-wrapper, .carousel-thumbs-wrapper .hero-video-wrapper, .gallery-zoom-wrapper .hero-video-wrapper, .gallery-thumbs-wrapper .hero-video-wrapper, .overlapping-image .hero-video-wrapper {
+	.item .hero-video-wrapper, .fl-item .hero-video-wrapper, .hover-reveal__img .hero-video-wrapper, .fl-slider .hero-video-wrapper, .open-thumbnail .hero-video-wrapper, .carousel-zoom-wrapper .hero-video-wrapper, .carousel-thumbs-wrapper .hero-video-wrapper, .gallery-zoom-wrapper .hero-video-wrapper, .gallery-thumbs-wrapper .hero-video-wrapper, .overlapping-image .hero-video-wrapper {
 		position: absolute;
 		box-sizing: border-box;
 		min-width: 100%;
@@ -774,7 +774,7 @@
 		color:#fff;
 	}
 	
-	.clapat-button-wrap {
+	.fl-button-wrap {
 		display: flex;
 		position: relative;
 		justify-content: center;
@@ -785,16 +785,16 @@
 		height:60px;		
 	}
 	
-	.clapat-button-wrap.circle {
+	.fl-button-wrap.circle {
 		min-width:104px;
 		height:104px;	
 	}
 	
-	.text-align-center .clapat-button-wrap {
+	.text-align-center .fl-button-wrap {
 		margin:0 auto;
 	}
 	
-	.clapat-button {		
+	.fl-button {		
 		opacity:1;		
 	}
 	
@@ -855,7 +855,7 @@
 		background-color:transparent;
 	}
 	
-	.clapat-button a {
+	.fl-button a {
 		position: relative;
 		display: block;
 		height: 100%;
@@ -903,17 +903,17 @@
 		text-align: center;
 	}
 	
-	.clapat-button:hover .button-border span {
+	.fl-button:hover .button-border span {
 		-webkit-transform: translateY(-100%);
 		transform: translateY(-100%);
 		transform-origin: 0% 0%;
 	}
 	
-	.clapat-button-wrap.circle:hover .button-border {
+	.fl-button-wrap.circle:hover .button-border {
 		border: solid 2px transparent;	
 	}
 	
-	.clapat-button-wrap.circle .button-border input, .clapat-button-wrap.circle .button-border a {
+	.fl-button-wrap.circle .button-border input, .fl-button-wrap.circle .button-border a {
 		height: 100px;
 		width: 100px;
 		line-height: 100px;
@@ -3009,16 +3009,16 @@
 		pointer-events:none;
 	}
 	
-	.carousel-shortcode-thumbs .clapat-item {
+	.carousel-shortcode-thumbs .fl-item {
 		width: calc(20% - 80px);
 		margin:60px 40px;
 	}
 	
-	.carousel-shortcode-thumbs.is_active .clapat-item {
+	.carousel-shortcode-thumbs.is_active .fl-item {
 		pointer-events:initial;
 	}
 	
-	.carousel-shortcode-thumbs .clapat-item .slide-inner {
+	.carousel-shortcode-thumbs .fl-item .slide-inner {
 		padding-top: 0;
 		width: 100%;
 		height: auto;
@@ -3377,19 +3377,19 @@
 
 @media only screen and (max-width: 1024px) {
 	
-	.content-slider.looped-carousel .clapat-slide {
+	.content-slider.looped-carousel .fl-slide {
 		padding:0 40px;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-slide {
+	.content-slider.small-looped-carousel .fl-slide {
 		padding:0 40px;
 	}
 	
-	.disable-cursor .full .looped-carousel .clapat-controls, .disable-cursor .full_elementor .looped-carousel .clapat-controls {
+	.disable-cursor .full .looped-carousel .fl-controls, .disable-cursor .full_elementor .looped-carousel .fl-controls {
 		width: calc(100% - 80px);
 	}
 	
-	.disable-cursor .full .small-looped-carousel .clapat-controls, .disable-cursor .full_elementor .small-looped-carousel .clapat-controls {
+	.disable-cursor .full .small-looped-carousel .fl-controls, .disable-cursor .full_elementor .small-looped-carousel .fl-controls {
 		width: calc(100% - 80px);
 		max-width:520px;
 	}		
@@ -3516,29 +3516,29 @@
 
 @media only screen and (max-width: 767px) {
 	
-	.content-slider.looped-carousel .clapat-slide {
+	.content-slider.looped-carousel .fl-slide {
 		padding:0 30px;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-slide {
+	.content-slider.small-looped-carousel .fl-slide {
 		padding:0 30px;
 	}
 	
-	.disable-cursor .full .looped-carousel .clapat-controls, .disable-cursor .full_elementor .looped-carousel .clapat-controls {
+	.disable-cursor .full .looped-carousel .fl-controls, .disable-cursor .full_elementor .looped-carousel .fl-controls {
 		width: calc(100% - 60px);
 	}
 	
-	.disable-cursor .full .small-looped-carousel .clapat-controls, .disable-cursor .full_elementor .small-looped-carousel .clapat-controls {
+	.disable-cursor .full .small-looped-carousel .fl-controls, .disable-cursor .full_elementor .small-looped-carousel .fl-controls {
 		width: calc(100% - 60px);
 		max-width:540px;
 	}
 	
-	.content-slider .clapat-pagination-bullet .parallax-wrap {
+	.content-slider .fl-pagination-bullet .parallax-wrap {
 		width: 20px;
 		height: 20px;
 	}
 	
-	.content-slider .clapat-pagination-bullet .parallax-wrap {
+	.content-slider .fl-pagination-bullet .parallax-wrap {
 		width: 20px;
 		height: 20px;
 	}
@@ -3726,24 +3726,24 @@
 		padding-left:0px;
 	}
 	
-	.content-slider.looped-carousel .clapat-slide {
+	.content-slider.looped-carousel .fl-slide {
 		padding:0 20px;
 	}
 	
-	.content-slider.small-looped-carousel .clapat-slide {
+	.content-slider.small-looped-carousel .fl-slide {
 		padding:0 20px;
 	}
 	
-	.disable-cursor .full .looped-carousel .clapat-controls, .disable-cursor .full_elementor .looped-carousel .clapat-controls {
+	.disable-cursor .full .looped-carousel .fl-controls, .disable-cursor .full_elementor .looped-carousel .fl-controls {
 		width: calc(100% - 40px);
 	}
 	
-	.disable-cursor .full .small-looped-carousel .clapat-controls, .disable-cursor .full_elementor .small-looped-carousel .clapat-controls {
+	.disable-cursor .full .small-looped-carousel .fl-controls, .disable-cursor .full_elementor .small-looped-carousel .fl-controls {
 		width: calc(100% - 40px);
 		max-width:560px;
 	}		
 			
-	.clapat-button {
+	.fl-button {
     	margin-bottom: 20px;
 	}
 	

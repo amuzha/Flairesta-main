@@ -551,10 +551,10 @@
 	}
 	
 /*--------------------------------------------------
-	ClaPat Popup
+	fl Popup
 ---------------------------------------------------*/	
 	
-	.clapat-img-popup, .clapat-video-popup {
+	.fl-img-popup, .fl-video-popup {
 		position:fixed;
 		height:100%;
 		width:100%;
@@ -568,7 +568,7 @@
   		align-items: center;
 	}
 	
-	.clapat-img-popup-viewport {
+	.fl-img-popup-viewport {
 		position: absolute;
 		display: flex;
 		box-sizing: border-box;
@@ -583,7 +583,7 @@
 		pointer-events: none;
 	}
 	
-	.clapat-video-popup-viewport {
+	.fl-video-popup-viewport {
 		position: absolute;
 		display: flex;
 		box-sizing: border-box;
@@ -599,13 +599,13 @@
 		pointer-events: none;
 	}
 	
-	.clapat-video-popup-viewport::before {
+	.fl-video-popup-viewport::before {
 		float: left;
 		padding-top: 56.25%;
 		content: "";
 	}
 	
-	.clapat-img-popup-preloader, .clapat-video-popup-preloader {
+	.fl-img-popup-preloader, .fl-video-popup-preloader {
 		display: block;
 		position: absolute;
 		margin: 0 auto;
@@ -613,7 +613,7 @@
 		height: 80px;
 	}
 	
-	.clapat-img-popup-preloader div, .clapat-video-popup-preloader div {
+	.fl-img-popup-preloader div, .fl-video-popup-preloader div {
 		position: absolute;
 		top: 33px;
 		width: 13px;
@@ -623,27 +623,27 @@
 		animation-timing-function: cubic-bezier(0, 1, 1, 0);
 	}
 	
-	.clapat-img-popup-preloader div:nth-child(1), .clapat-video-popup-preloader div:nth-child(1) {
+	.fl-img-popup-preloader div:nth-child(1), .fl-video-popup-preloader div:nth-child(1) {
 		left: 8px;
-		animation: clapat-img-popup-preloader1 0.6s infinite;
+		animation: fl-img-popup-preloader1 0.6s infinite;
 	}
 	
-	.clapat-img-popup-preloader div:nth-child(2), .clapat-video-popup-preloader div:nth-child(2) {
+	.fl-img-popup-preloader div:nth-child(2), .fl-video-popup-preloader div:nth-child(2) {
 		left: 8px;
-		animation: clapat-img-popup-preloader2 0.6s infinite;
+		animation: fl-img-popup-preloader2 0.6s infinite;
 	}
 	
-	.clapat-img-popup-preloader div:nth-child(3), .clapat-video-popup-preloader div:nth-child(3) {
+	.fl-img-popup-preloader div:nth-child(3), .fl-video-popup-preloader div:nth-child(3) {
 		left: 32px;
-		animation: clapat-img-popup-preloader2 0.6s infinite;
+		animation: fl-img-popup-preloader2 0.6s infinite;
 	}
 	
-	.clapat-img-popup-preloader div:nth-child(4), .clapat-video-popup-preloader div:nth-child(4) {
+	.fl-img-popup-preloader div:nth-child(4), .fl-video-popup-preloader div:nth-child(4) {
 		left: 56px;
-		animation: clapat-img-popup-preloader3 0.6s infinite;
+		animation: fl-img-popup-preloader3 0.6s infinite;
 	}
 	
-	@keyframes clapat-img-popup-preloader1 {
+	@keyframes fl-img-popup-preloader1 {
 		0% {
 			transform: scale(0);
 		}
@@ -652,7 +652,7 @@
 		}
 	}
 	
-	@keyframes clapat-img-popup-preloader3 {
+	@keyframes fl-img-popup-preloader3 {
 		0% {
 			transform: scale(1);
 		}
@@ -661,7 +661,7 @@
 		}
 	}
 	
-	@keyframes clapat-img-popup-preloader2 {
+	@keyframes fl-img-popup-preloader2 {
 		0% {
 			transform: translate(0, 0);
 		}
@@ -671,7 +671,7 @@
 	}
 
 	
-	.clapat-img-popup img {
+	.fl-img-popup img {
 		position: relative;
 		max-width: 100%;
 		max-height: calc(100vh - 160px);
@@ -682,7 +682,7 @@
 		pointer-events: initial;
 	}
 	
-	.clapat-video-popup iframe {
+	.fl-video-popup iframe {
 		position: absolute;
 		display: block;
 		top: 0;
@@ -693,11 +693,11 @@
 		pointer-events: initial;
 	}
 	
-	.rounded-borders .clapat-img-popup img {
+	.rounded-borders .fl-img-popup img {
 		border-radius:8px;
 	}
 	
-	.clapat-img-popup-bg-close, .clapat-video-popup-bg-close {
+	.fl-img-popup-bg-close, .fl-video-popup-bg-close {
 		position:absolute;
 		display:block;
 		height:100%;
@@ -708,7 +708,7 @@
 		bottom:0;
 	}
 	
-	.clapat-img-popup-close {
+	.fl-img-popup-close {
 		position:absolute;
 		width:40px;
 		height:40px;
@@ -725,7 +725,7 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 	
-	.clapat-video-popup-close {
+	.fl-video-popup-close {
 		position:absolute;
 		width:40px;
 		height:40px;
@@ -742,11 +742,11 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 	
-	.clapat-img-popup-close:hover, .clapat-video-popup-close:hover {
+	.fl-img-popup-close:hover, .fl-video-popup-close:hover {
 		background-color:rgba(0,0,0,1);
 	}
 	
-	.clapat-img-popup-close::after, .clapat-video-popup-close::after {
+	.fl-img-popup-close::after, .fl-video-popup-close::after {
 		font: var(--fa-font-solid);
 		content: "\f00d";
 		font-size: 16px;
@@ -758,7 +758,7 @@
 		height: 100%;
 	}
 	
-	.clapat-img-popup-prev, .clapat-video-popup-prev {
+	.fl-img-popup-prev, .fl-video-popup-prev {
 		position:absolute;
 		width: 26px;
 		height: 50px;
@@ -773,11 +773,11 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 	
-	.clapat-img-popup-prev:hover, .clapat-video-popup-prev:hover {
+	.fl-img-popup-prev:hover, .fl-video-popup-prev:hover {
 		background-color:rgba(0,0,0,1);
 	}
 	
-	.clapat-img-popup-prev::after, .clapat-video-popup-prev::after {
+	.fl-img-popup-prev::after, .fl-video-popup-prev::after {
 		font: var(--fa-font-solid);
 		content: "\f104";
 		font-size: 16px;
@@ -789,7 +789,7 @@
 		height: 100%;
 	}
 	
-	.clapat-img-popup-next, .clapat-video-popup-next {
+	.fl-img-popup-next, .fl-video-popup-next {
 		position:absolute;
 		width: 26px;
 		height: 50px;
@@ -804,11 +804,11 @@
 		transition: background-color 0.2s ease-in-out;
 	}
 	
-	.clapat-img-popup-next:hover, .clapat-video-popup-next:hover {
+	.fl-img-popup-next:hover, .fl-video-popup-next:hover {
 		background-color:rgba(0,0,0,1);
 	}
 	
-	.clapat-img-popup-next::after, .clapat-video-popup-next::after {
+	.fl-img-popup-next::after, .fl-video-popup-next::after {
 		font: var(--fa-font-solid);
 		content: "\f105";
 		font-size: 16px;
@@ -840,28 +840,28 @@
 
 @media only screen and (max-width: 479px) {
 	
-	.clapat-img-popup-viewport {
+	.fl-img-popup-viewport {
 		padding: 60px 23px;
 	}
 	
-	.clapat-video-popup-viewport {
+	.fl-video-popup-viewport {
   		width: calc(100% - 60px);
 	}
 	
-	.clapat-img-popup img {
+	.fl-img-popup img {
 		max-height: calc(100vh - 120px);
 	}
 	
-	.clapat-img-popup-close {
+	.fl-img-popup-close {
 		right: 3px;
     	top: 40px
 	}
 	
-	.clapat-img-popup-prev {
+	.fl-img-popup-prev {
 		left:10px;
 	}
 	
-	.clapat-img-popup-next {
+	.fl-img-popup-next {
 		right:10px;
 	}
 	

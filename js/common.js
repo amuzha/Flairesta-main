@@ -143,7 +143,7 @@ Function Scroll Effects
 			var heroTranslate = $('.hero-translate').height();	
 			var winHeight = $(window).height();
 			var footer_height = $('footer').height();						
-			$('.smooth-scroll main, .has-parallax, nav, .clapat-slider-wrapper:not(.content-slider), .showcase-lists .clapat-sync-slider, .next-project-image-wrapper, .slider-fixed-content').css({'height': winHeight});
+			$('.smooth-scroll main, .has-parallax, nav, .fl-slider-wrapper:not(.content-slider), .showcase-lists .fl-sync-slider, .next-project-image-wrapper, .slider-fixed-content').css({'height': winHeight});
 			$('#main-page-content.project-page').css({'margin-bottom': winHeight*2 - footer_height});
 			if (!$("body").hasClass("project-nav-text")) {
 				$('#project-nav').css({'height': winHeight*2, 'bottom': -winHeight*2});
@@ -161,7 +161,7 @@ Function Scroll Effects
 				var heroTranslate = $('.hero-translate').height();
 				var winHeight = $(window).height();	
 				var footer_height = $('footer').height();					
-				$('.smooth-scroll main, .has-parallax, nav, .clapat-slider-wrapper:not(.content-slider), .showcase-lists .clapat-sync-slider, .next-project-image-wrapper, .slider-fixed-content').css({'height': winHeight});							
+				$('.smooth-scroll main, .has-parallax, nav, .fl-slider-wrapper:not(.content-slider), .showcase-lists .fl-sync-slider, .next-project-image-wrapper, .slider-fixed-content').css({'height': winHeight});							
 				$('#main-page-content.project-page').css({'margin-bottom': winHeight*2 - footer_height});
 				if (!$("body").hasClass("project-nav-text")) {
 					$('#project-nav').css({'height': winHeight*2, 'bottom': -winHeight*2});
@@ -1421,13 +1421,13 @@ Function Scroll Effects
 			});
 		}
 		
-		if ($('#clapat-page-content').hasClass("light-content")) {
+		if ($('#fl-page-content').hasClass("light-content")) {
 			if ($('#project-nav').hasClass("change-header")) {
 		  		imagesLoaded('body', function() {
 					setTimeout(function() {	
 						var pageNav = document.querySelector('#project-nav.change-header');
 						if (pageNav) {
-							var pageContent = document.querySelector('#clapat-page-content');	
+							var pageContent = document.querySelector('#fl-page-content');	
 							var nextPageCaptionParallax = gsap.to('.page-nav-caption', {
 								scrollTrigger: {
 									trigger: pageNav,
@@ -1453,13 +1453,13 @@ Function Scroll Effects
 			}
 		}
 		
-		if ($('#clapat-page-content').hasClass("dark-content")) {
+		if ($('#fl-page-content').hasClass("dark-content")) {
 			if ($('#project-nav').hasClass("change-header")) {
 		  		imagesLoaded('body', function() {
 					setTimeout(function() {	
 						var pageNav = document.querySelector('#project-nav');
 						if (pageNav) {
-							var pageContent = document.querySelector('#clapat-page-content');
+							var pageContent = document.querySelector('#fl-page-content');
 							var nextPageCaptionParallax = gsap.to('.page-nav-caption', {
 								scrollTrigger: {
 									trigger: pageNav,
@@ -1510,12 +1510,12 @@ Function First Load
 		});
 		
 		
-		if ($("#clapat-page-content").hasClass("light-content")) {
+		if ($("#fl-page-content").hasClass("light-content")) {
 			$("nav").css('background-color', function () {
 				return $("header").data('menucolor')
 			});
 			
-			gsap.to("main", {duration: 0.5, backgroundColor: document.querySelector("#clapat-page-content").getAttribute("data-bgcolor"), ease:Power2.easeInOut});
+			gsap.to("main", {duration: 0.5, backgroundColor: document.querySelector("#fl-page-content").getAttribute("data-bgcolor"), ease:Power2.easeInOut});
 			
 			$('#magic-cursor').addClass('light-content');
 			if( $('#hero').length > 0 ){						
@@ -1541,7 +1541,7 @@ Function First Load
 				return $("header").data('menucolor')
 			});	
 			
-			gsap.to("main", {duration: 0.5, backgroundColor: document.querySelector("#clapat-page-content").getAttribute("data-bgcolor"), ease:Power2.easeInOut});
+			gsap.to("main", {duration: 0.5, backgroundColor: document.querySelector("#fl-page-content").getAttribute("data-bgcolor"), ease:Power2.easeInOut});
 			
 			$('#magic-cursor').removeClass('light-content');
 			if( $('#hero').length > 0 ){	
@@ -1578,7 +1578,7 @@ Function First Load
 			$(".flexnav").removeClass("flexnav-show");
 			$('#menu-burger').removeClass("open");
 			
-			gsap.to("nav", {duration: 0.3, backgroundColor: document.querySelector("#clapat-page-content").getAttribute("data-bgcolor")});
+			gsap.to("nav", {duration: 0.3, backgroundColor: document.querySelector("#fl-page-content").getAttribute("data-bgcolor")});
 			
 			$('header').removeClass('white-header');
 			$("#app").remove();
@@ -2075,18 +2075,18 @@ Function FitThumbScreen WEBGL
 							
 							
 							
-							if (!$('#clapat-page-content').hasClass("light-content")) {
+							if (!$('#fl-page-content').hasClass("light-content")) {
 								
 								if (!$('.portfolio').hasClass("portfolio-shortcode")) {
 									if (!parent_item.hasClass("change-header")) {
-										$('#clapat-page-content').delay(1200).queue(function(next){							
+										$('#fl-page-content').delay(1200).queue(function(next){							
 											$(this).addClass('light-content');
 											next();
 										});
 									}								
 								} else {								
 									if (!parent_item.hasClass("change-header")) {
-										$('#clapat-page-content').delay(1200).queue(function(next){							
+										$('#fl-page-content').delay(1200).queue(function(next){							
 											$(this).removeClass('light-content');
 											next();
 										});
@@ -2095,14 +2095,14 @@ Function FitThumbScreen WEBGL
 							} else {							
 								if (!$('.portfolio').hasClass("portfolio-shortcode")) {
 									if (parent_item.hasClass("change-header")) {
-										$('#clapat-page-content').delay(1200).queue(function(next){							
+										$('#fl-page-content').delay(1200).queue(function(next){							
 											$(this).removeClass('light-content');
 											next();
 										});
 									}
 								} else {
 									if (!parent_item.hasClass("change-header")) {
-										$('#clapat-page-content').delay(1200).queue(function(next){							
+										$('#fl-page-content').delay(1200).queue(function(next){							
 											$(this).removeClass('light-content');
 											next();
 										});
@@ -2113,7 +2113,7 @@ Function FitThumbScreen WEBGL
 									
 								
 											
-							$('.clapat-slider .trigger-item').each(function(){
+							$('.fl-slider .trigger-item').each(function(){
 								if (!$(this).hasClass("above")) {
 									gsap.to($(this), {duration: 0.5, delay:0, opacity:0, ease:Power4.easeInOut});
 								} else  {
@@ -2171,7 +2171,7 @@ Function FitThumbScreen GSAP
 				  	parentItem.addClass('above-trigger');
 				  	$("body").addClass("show-loader");
 				
-				  	const fadeOutTargets = $('#hero, #show-filters, .clapat-slider, .item, .item-caption-wrapper, #page-nav, footer, .fadeout-element');				  	
+				  	const fadeOutTargets = $('#hero, #show-filters, .fl-slider, .item, .item-caption-wrapper, #page-nav, footer, .fadeout-element');				  	
 				  	const ball = $('#ball');
 				  	const ballLoader = $('#ball-loader');
 				
@@ -2200,7 +2200,7 @@ Function FitThumbScreen GSAP
 				
 				$("body").addClass("show-loader");
 				
-				const fadeOutTargets = $('#hero, #show-filters, .clapat-slider, .item, .item-caption-wrapper, #page-nav, footer, .fadeout-element');
+				const fadeOutTargets = $('#hero, #show-filters, .fl-slider, .item, .item-caption-wrapper, #page-nav, footer, .fadeout-element');
 				const ball = $('#ball');
 				const ballLoader = $('#ball-loader');
 				
@@ -2440,7 +2440,7 @@ Function Sliders
 			
 		if( $('.content-slider').length > 0 ){
 				
-			slider = new ClapatSlider('.content-slider', { 
+			slider = new flSlider('.content-slider', { 
 				direction: 'horizontal', 
 				snap: true,
 				mousewheel: false,
@@ -2451,10 +2451,10 @@ Function Sliders
 			});
 			
 			$(".slider-button-prev").mouseenter(function(e) {
-				if ($(this).parents(".clapat-slider-wrapper").hasClass("light-cursor")) {
+				if ($(this).parents(".fl-slider-wrapper").hasClass("light-cursor")) {
 					$("body").addClass("drag-cursor-white");
 					gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#fff'});
-				} else if ($(this).parents(".clapat-slider-wrapper").hasClass("dark-cursor")) {
+				} else if ($(this).parents(".fl-slider-wrapper").hasClass("dark-cursor")) {
 					$("body").addClass("drag-cursor-black");
 					gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#000'});
 				}	
@@ -2469,10 +2469,10 @@ Function Sliders
 			});
 			
 			$(".slider-button-next").mouseenter(function(e) {	
-				if ($(this).parents(".clapat-slider-wrapper").hasClass("light-cursor")) {
+				if ($(this).parents(".fl-slider-wrapper").hasClass("light-cursor")) {
 					$("body").addClass("drag-cursor-white");
 					gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#fff'});
-				} else if ($(this).parents(".clapat-slider-wrapper").hasClass("dark-cursor")) {
+				} else if ($(this).parents(".fl-slider-wrapper").hasClass("dark-cursor")) {
 					$("body").addClass("drag-cursor-black");
 					gsap.to('#ball', {duration: 0.2, borderWidth: '2px', scale: 1, borderColor:'#000'});
 				}	
@@ -2486,7 +2486,7 @@ Function Sliders
 				$("body").removeClass("drag-cursor-black").removeClass("drag-cursor-white");
 			});
 			
-			$('.content-slider.looped-carousel .clapat-slider, .content-slider.small-looped-carousel .clapat-slider').on('mouseenter mousemove', function() {	
+			$('.content-slider.looped-carousel .fl-slider, .content-slider.small-looped-carousel .fl-slider').on('mouseenter mousemove', function() {	
 				$("body" ).addClass("scale-drag-x");
 				if ($(this).parent().hasClass("light-cursor")) {
 					$("body").addClass("drag-cursor-white");
@@ -2555,23 +2555,23 @@ Function Lightbox
 			
 			event.preventDefault();
 			
-			$('body').prepend(`<div class="clapat-img-popup">
-				<div class="clapat-img-popup-bg-close"></div>				
-				<div class="clapat-img-popup-viewport">
-					<div class="clapat-img-popup-preloader"><div></div><div></div><div></div><div></div></div>					
+			$('body').prepend(`<div class="fl-img-popup">
+				<div class="fl-img-popup-bg-close"></div>				
+				<div class="fl-img-popup-viewport">
+					<div class="fl-img-popup-preloader"><div></div><div></div><div></div><div></div></div>					
 					<img />
-					<div class="clapat-img-popup-close link"></div>						
+					<div class="fl-img-popup-close link"></div>						
 				</div>				
-				<div class="clapat-img-popup-prev link"></div>
-				<div class="clapat-img-popup-next link"></div></div>`);
+				<div class="fl-img-popup-prev link"></div>
+				<div class="fl-img-popup-next link"></div></div>`);
 			
-			const details = document.querySelector('.clapat-img-popup');
-			const detailsBgClose = document.querySelector('.clapat-img-popup-bg-close');
-			const detailsClose = document.querySelector('.clapat-img-popup-close');
-			const detailsPreloader = document.querySelector('.clapat-img-popup-preloader');
-			const detailImage = document.querySelector('.clapat-img-popup img');
-			const detailPrev = document.querySelector('.clapat-img-popup-prev');
-			const detailNext = document.querySelector('.clapat-img-popup-next');
+			const details = document.querySelector('.fl-img-popup');
+			const detailsBgClose = document.querySelector('.fl-img-popup-bg-close');
+			const detailsClose = document.querySelector('.fl-img-popup-close');
+			const detailsPreloader = document.querySelector('.fl-img-popup-preloader');
+			const detailImage = document.querySelector('.fl-img-popup img');
+			const detailPrev = document.querySelector('.fl-img-popup-prev');
+			const detailNext = document.querySelector('.fl-img-popup-next');
 			
 			gsap.to(detailsBgClose, {duration: 0.3, delay:0, backgroundColor:"rgba(0,0,0,0.9)"});
 			gsap.to(detailsPreloader, {duration: 0.2, opacity:1});
@@ -2625,12 +2625,12 @@ Function Lightbox
 
 		function hideDetails() {
 			
-			const details = document.querySelector('.clapat-img-popup');
-			const detailsBgClose = document.querySelector('.clapat-img-popup-bg-close');
-			const detailsClose = document.querySelector('.clapat-img-popup-close');
-			const detailImage = document.querySelector('.clapat-img-popup img');
-			const detailPrev = document.querySelector('.clapat-img-popup-prev');
-			const detailNext = document.querySelector('.clapat-img-popup-next');
+			const details = document.querySelector('.fl-img-popup');
+			const detailsBgClose = document.querySelector('.fl-img-popup-bg-close');
+			const detailsClose = document.querySelector('.fl-img-popup-close');
+			const detailImage = document.querySelector('.fl-img-popup img');
+			const detailPrev = document.querySelector('.fl-img-popup-prev');
+			const detailNext = document.querySelector('.fl-img-popup-next');
 			
 			detailsBgClose.removeEventListener('click', hideDetails);
 			detailsClose.removeEventListener('click', hideDetails);
@@ -2652,7 +2652,7 @@ Function Lightbox
 				duration: 0.5,
 				delay: 0.0, // time in ms if we want a delay before flip
 				onComplete: () => gsap.to(detailsBgClose, {duration: 0.5, backgroundColor:"rgba(0,0,0,0)", onComplete: function() {
-					$('.clapat-img-popup').remove();
+					$('.fl-img-popup').remove();
 				}}),				
 			});
 
@@ -2661,8 +2661,8 @@ Function Lightbox
 		
 		function nextPopup() {
 			
-			const detailsPreloader = document.querySelector('.clapat-img-popup-preloader');
-			const detailImage = document.querySelector('.clapat-img-popup img');
+			const detailsPreloader = document.querySelector('.fl-img-popup-preloader');
+			const detailImage = document.querySelector('.fl-img-popup img');
 			let currIndex = items.indexOf(activeItem);
 			
 			let nextIndex = currIndex + 1;
@@ -2684,8 +2684,8 @@ Function Lightbox
 		
 		function prevPopup() {
 			
-			const detailsPreloader = document.querySelector('.clapat-img-popup-preloader');
-			const detailImage = document.querySelector('.clapat-img-popup img');
+			const detailsPreloader = document.querySelector('.fl-img-popup-preloader');
+			const detailImage = document.querySelector('.fl-img-popup img');
 			let currIndex = items.indexOf(activeItem);
 			
 			let prevIndex = currIndex - 1;
@@ -2735,21 +2735,21 @@ Function Lightbox
 				return;
 			}
 			
-			$('body').prepend(`<div class="clapat-video-popup">
-				<div class="clapat-video-popup-bg-close"></div>				
-				<div class="clapat-video-popup-viewport">
-					<div class="clapat-video-popup-preloader"><div></div><div></div><div></div><div></div></div>					
-					<iframe class="clapat-video-popup-iframe" frameborder="0" allow="autoplay"></iframe>
-					<div class="clapat-video-popup-close link"></div>						
+			$('body').prepend(`<div class="fl-video-popup">
+				<div class="fl-video-popup-bg-close"></div>				
+				<div class="fl-video-popup-viewport">
+					<div class="fl-video-popup-preloader"><div></div><div></div><div></div><div></div></div>					
+					<iframe class="fl-video-popup-iframe" frameborder="0" allow="autoplay"></iframe>
+					<div class="fl-video-popup-close link"></div>						
 				</div>				
-				<div class="clapat-img-video-prev link"></div>
-				<div class="clapat-img-video-next link"></div></div>`);
+				<div class="fl-img-video-prev link"></div>
+				<div class="fl-img-video-next link"></div></div>`);
 			
-			const details = document.querySelector('.clapat-video-popup');
-			const detailsBgClose = document.querySelector('.clapat-video-popup-bg-close');
-			const detailsClose = document.querySelector('.clapat-video-popup-close');
-			const detailsPreloader = document.querySelector('.clapat-video-popup-preloader');
-			const detailIframe = document.querySelector('.clapat-video-popup iframe');
+			const details = document.querySelector('.fl-video-popup');
+			const detailsBgClose = document.querySelector('.fl-video-popup-bg-close');
+			const detailsClose = document.querySelector('.fl-video-popup-close');
+			const detailsPreloader = document.querySelector('.fl-video-popup-preloader');
+			const detailIframe = document.querySelector('.fl-video-popup iframe');
 			
 			gsap.to(detailsBgClose, {duration: 0.3, delay:0, backgroundColor:"rgba(0,0,0,0.9)"});
 			gsap.to(detailsPreloader, {duration: 0.2, opacity:1});
@@ -2814,10 +2814,10 @@ Function Lightbox
 
 		function hideVideoDetails() {
 			
-			const details = document.querySelector('.clapat-video-popup');
-			const detailsBgClose = document.querySelector('.clapat-video-popup-bg-close');
-			const detailsClose = document.querySelector('.clapat-video-popup-close');
-			const detailIframe = document.querySelector('.clapat-video-popup iframe');
+			const details = document.querySelector('.fl-video-popup');
+			const detailsBgClose = document.querySelector('.fl-video-popup-bg-close');
+			const detailsClose = document.querySelector('.fl-video-popup-close');
+			const detailIframe = document.querySelector('.fl-video-popup iframe');
 			
 			detailsBgClose.removeEventListener('click', hideDetails);
 			detailsClose.removeEventListener('click', hideDetails);
@@ -2825,7 +2825,7 @@ Function Lightbox
 			gsap.to([detailsClose, detailIframe], {duration: 0.2, delay:0, opacity:0});
 						
 			gsap.to(detailsBgClose, {duration: 0.5, delay:0.2, backgroundColor:"rgba(0,0,0,0)", onComplete: function() {
-					$('.clapat-video-popup').remove();
+					$('.fl-video-popup').remove();
 				}}),
 
 			sourceVideoItem = null;
@@ -3204,7 +3204,7 @@ Function Core
 				gsap.ticker.remove(updatePosition);
 			})
 			
-			$(".clapat-button .sticky.left").mouseenter(function(e) {		  
+			$(".fl-button .sticky.left").mouseenter(function(e) {		  
 				var rcBounds = $(this)[0].getBoundingClientRect();		  
 				var positionX = rcBounds.left  + 22;
 				var positionY = rcBounds.top + rcBounds.height/2;		  
@@ -3212,7 +3212,7 @@ Function Core
 				gsap.ticker.remove(updatePosition);
 			})
 			
-			$(".clapat-button .sticky.right").mouseenter(function(e) {		  
+			$(".fl-button .sticky.right").mouseenter(function(e) {		  
 				var rcBounds = $(this)[0].getBoundingClientRect();		  
 				var positionX = rcBounds.right  - 22;
 				var positionY = rcBounds.top + rcBounds.height/2;		  
@@ -3236,7 +3236,7 @@ Function Core
 				gsap.to(ball, { duration: 0.3, scale: 0.7, borderWidth: '6px', opacity:0.6, borderColor:'#999' });
 			});
 			
-			$(".clapat-button .parallax-wrap.icon-wrap").mouseenter(function(e) {
+			$(".fl-button .parallax-wrap.icon-wrap").mouseenter(function(e) {
 				gsap.to(ball, { duration: 0.05, scale: 0.4, borderWidth: '0px', opacity:1, borderColor:'#000' });
 			});
 			
@@ -3258,8 +3258,8 @@ Function Core
 			$("#main .sticky").mouseenter(function(e) {
 				gsap.to(ball, { duration: 0.5, borderColor:'#999' });
 			});
-			$(".clapat-button .sticky").mouseenter(function(e) {
-				if ($('#clapat-page-content').hasClass("light-content")) {
+			$(".fl-button .sticky").mouseenter(function(e) {
+				if ($('#fl-page-content').hasClass("light-content")) {
 					gsap.to(ball, { duration: 0.5, borderColor:'#000' });
 				} else {
 					gsap.to(ball, { duration: 0.5, borderColor:'#fff' });  
@@ -3268,8 +3268,8 @@ Function Core
 			$(".parallax-wrap").mouseenter(function(e) {
 				gsap.to(ball, { duration: 0.3, borderColor:$("body").data('primary-color')  });
 			});
-			$(".clapat-button .parallax-wrap").mouseenter(function(e) {
-				if ($('#clapat-page-content').hasClass("light-content")) {
+			$(".fl-button .parallax-wrap").mouseenter(function(e) {
+				if ($('#fl-page-content').hasClass("light-content")) {
 					gsap.to(ball, { duration: 0.05, borderColor:'#000'  });
 				} else {
 					gsap.to(ball, { duration: 0.05, borderColor:'#fff'  });
@@ -3334,11 +3334,11 @@ Function Core
 			});
 			
 			//Blog Hover Effects			
-			$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .clapat-sidebar-widget a").mouseenter(function(e) {	
+			$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .fl-sidebar-widget a").mouseenter(function(e) {	
 				gsap.to('#ball', {duration: 0.2, borderWidth: '1px', scale: 1, opacity:0});
 			});	
 					
-			$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .clapat-sidebar-widget a").mouseleave(function(e) {
+			$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .fl-sidebar-widget a").mouseleave(function(e) {
 				gsap.to('#ball', {duration: 0.3, borderWidth: '4px', scale:0.5, opacity:1});
 			});
 		}
@@ -3404,8 +3404,8 @@ Function Core
 				  
 				  	$('main').html(section);
 				  
-				 	var clapat_title = event.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-					$('head title').html( clapat_title );
+				 	var fl_title = event.match(/<title[^>]*>([^<]+)<\/title>/)[1];
+					$('head title').html( fl_title );
 				  
 					// if we have Elementor inline styles in the target page
 					headTags = [
@@ -3481,7 +3481,7 @@ Function Core
 						gsap.ticker.remove(updatePosition);
 					})
 					
-					$(".clapat-button .sticky.left").mouseenter(function(e) {		  
+					$(".fl-button .sticky.left").mouseenter(function(e) {		  
 						var rcBounds = $(this)[0].getBoundingClientRect();		  
 						var positionX = rcBounds.left  + 22;
 						var positionY = rcBounds.top + rcBounds.height/2;		  
@@ -3489,7 +3489,7 @@ Function Core
 						gsap.ticker.remove(updatePosition);
 					})
 					
-					$(".clapat-button .sticky.right").mouseenter(function(e) {		  
+					$(".fl-button .sticky.right").mouseenter(function(e) {		  
 						var rcBounds = $(this)[0].getBoundingClientRect();		  
 						var positionX = rcBounds.right  - 22;
 						var positionY = rcBounds.top + rcBounds.height/2;		  
@@ -3513,7 +3513,7 @@ Function Core
 						gsap.to(ball, { duration: 0.3, scale: 0.7, borderWidth: '6px', opacity:0.6, borderColor:'#999' });
 					});
 					
-					$(".clapat-button .parallax-wrap.icon-wrap").mouseenter(function(e) {
+					$(".fl-button .parallax-wrap.icon-wrap").mouseenter(function(e) {
 						gsap.to(ball, { duration: 0.05, scale: 0.4, borderWidth: '0px', opacity:1, borderColor:'#000' });
 					});
 					
@@ -3534,8 +3534,8 @@ Function Core
 					$("#main .sticky").mouseenter(function(e) {
 						gsap.to(ball, { duration: 0.5, borderColor:'#999' });
 					});
-					$(".clapat-button .sticky").mouseenter(function(e) {
-						if ($('#clapat-page-content').hasClass("light-content")) {
+					$(".fl-button .sticky").mouseenter(function(e) {
+						if ($('#fl-page-content').hasClass("light-content")) {
 							gsap.to(ball, { duration: 0.5, borderColor:'#000' });
 						} else {
 							gsap.to(ball, { duration: 0.5, borderColor:'#fff' });  
@@ -3544,8 +3544,8 @@ Function Core
 					$(".parallax-wrap").mouseenter(function(e) {
 						gsap.to(ball, { duration: 0.3, borderColor:$("body").data('primary-color')  });
 					});
-					$(".clapat-button .parallax-wrap").mouseenter(function(e) {
-						if ($('#clapat-page-content').hasClass("light-content")) {
+					$(".fl-button .parallax-wrap").mouseenter(function(e) {
+						if ($('#fl-page-content').hasClass("light-content")) {
 							gsap.to(ball, { duration: 0.05, borderColor:'#000'  });
 						} else {
 							gsap.to(ball, { duration: 0.05, borderColor:'#fff'  });
@@ -3610,11 +3610,11 @@ Function Core
 					});
 					
 					//Blog Hover Effects			
-					$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .clapat-sidebar-widget a").mouseenter(function(e) {	
+					$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .fl-sidebar-widget a").mouseenter(function(e) {	
 						gsap.to('#ball', {duration: 0.2, borderWidth: '1px', scale: 1, opacity:0});
 					});	
 							
-					$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .clapat-sidebar-widget a").mouseleave(function(e) {
+					$("#blog-page-nav .page-numbers li a, .post-page-numbers, #post-content a, #post-form a, #post-comments a, .wp-block-search__button, .fl-sidebar-widget a").mouseleave(function(e) {
 						gsap.to('#ball', {duration: 0.3, borderWidth: '4px', scale:0.5, opacity:1});
 					});
 				}
